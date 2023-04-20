@@ -38,27 +38,18 @@ const vertices = new Float32Array( [
 	...vb,
 	...vd,
 	
+	...vd,
+	...vb,
+	...vc,
 
-	 ...vd,
-	 ...vb,
-	 ...vc,
+	...vd,
+	...vc,
+	...ve,
 
-	 ...vd,
-	 ...vc,
-	 ...ve,
-
-	 ...ve,
-	 ...vc,
-	 ...vf,
-
-	 ...va,
-	 ...vb,
-	 ...vg,
-
-	 ...vb,
-	 ...vg,
-	 ...vh,
-
+	...ve,
+	...vc,
+	...vf,
+	
 	 ...ve,
 	 ...vf,
 	 ...vh,
@@ -66,6 +57,15 @@ const vertices = new Float32Array( [
 	 ...vg,
 	 ...ve,
 	 ...vh,
+
+	// ...va,
+	// ...vb,
+	// ...vg,
+
+	//  ...vb,
+	//  ...vg,
+	//  ...vh,
+
 
 
 
@@ -81,13 +81,38 @@ const uvs = new Float32Array ( [
 	0, 0,
 	1, 0,
 
+	0, 1,
+	0, 0,
+	1, 1,
+	
+	1, 1,
+	0, 0,
+	1, 0,
+
+	0, 1,
+	0, 0,
+	1, 0,
+	
+	0, 1,
+	1, 1,
+	1, 1,
+
+	// 0, 1,
+	// 0, 0,
+	// 1, 1,
+	
+	// 1, 1,
+	// 0, 0,
+	// 1, 0,
+
+	
 ] );
 
 geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.setAttribute( 'uv', new THREE.BufferAttribute( uvs, 2 ) );
 
 const material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-const mesh = new THREE.Mesh( geometry, material );
+const mesh = new THREE.Mesh( geometry, material_ );
 
 scene.add(mesh);
 
@@ -97,7 +122,7 @@ function animate() {
 	requestAnimationFrame( animate );
 
 	//cube.rotation.x += 0.01;
-	mesh.rotation.y += 0.01;
+	mesh.rotation.y += -0.01;
 
 	renderer.render( scene, camera );
 }
