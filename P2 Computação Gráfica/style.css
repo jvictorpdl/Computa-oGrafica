@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+body {
+    margin: 0; 
+}
+.botao {
+    display: block;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 5px;
+    margin: 20px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.Container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
